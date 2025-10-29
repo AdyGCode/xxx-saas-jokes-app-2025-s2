@@ -24,7 +24,7 @@ class CategorySeeder extends Seeder
 
         foreach ($seedCategories as $seedCategory){
             $category = Category::firstOrCreate(
-                ['id'=>$seedCategory['id'] ?? 0],
+                ['title'=>$seedCategory['title'] ?? 0],
                 $seedCategory
             );
         }

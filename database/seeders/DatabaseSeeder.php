@@ -16,8 +16,12 @@ class DatabaseSeeder extends Seeder
         $this->call(
             [
                 // When using Spatie Permissions, perform the Role / Permission seeding FIRST
+
                 UserSeeder::class,
                 // Add further seeder classes here
+
+                CategorySeeder::class,
+
             ]
         );
 

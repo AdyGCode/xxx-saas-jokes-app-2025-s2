@@ -37,6 +37,8 @@ Route::middleware(['auth', 'verified'])
 
         Route::get('users', [AdminController::class, 'users'])->name('users');
 
+        Route::get('categories/{category}/delete', [CategoryManagementController::class, 'delete'])
+            ->name('categories.delete');
         /**
          * Creates the routes:
          *      admin.categories.index
