@@ -7,17 +7,34 @@
 
     <section class="py-12 mx-12 space-y-4">
 
-        <header>
+        <header class="flex justify-between">
             <h3 class="text-2xl font-bold text-zinc-700">
-                {{__('Categories')}}: {{ __('Detail') }}
+                {{__('Categories')}}: <i class="fa-solid fa-sticky-note"></i> {{ __('Detail') }}
             </h3>
+
+        <x-primary-link-button
+            href="{{ route('admin.categories.create') }}">
+            <i class="fa-solid fa-plus"></i>
+            New Category
+        </x-primary-link-button>
+
         </header>
 
+
         <dl class="grid grid-cols-6 m-4 w-full shadow mb-6">
-            <dt class="col-span-1 bg-gray-200 border-b-1 border-b-gray-300 p-2 text-gray-700">Name</dt>
-            <dd class="col-span-5 border-b-1 border-b-gray-300 p-2">{{ $category->title }}</dd>
-            <dt class="col-span-1 bg-gray-200 border-b-1 border-b-gray-300 p-2 text-gray-700">Description</dt>
-            <dd class="col-span-5 border-b-1 border-b-gray-300 p-2">{{ $category->description }}</dd>
+            <dt class="col-span-1 bg-gray-200 border-b-1 border-b-gray-300 p-2 text-gray-700">
+                Name
+            </dt>
+            <dd class="col-span-5 border-b-1 border-b-gray-300 p-2">
+                {{ $category->title }}
+            </dd>
+
+            <dt class="col-span-1 bg-gray-200 border-b-1 border-b-gray-300 p-2 text-gray-700">
+                Description
+            </dt>
+            <dd class="col-span-5 border-b-1 border-b-gray-300 p-2">
+                {{ $category->description }}
+            </dd>
         </dl>
 
         <footer class="flex gap-4">

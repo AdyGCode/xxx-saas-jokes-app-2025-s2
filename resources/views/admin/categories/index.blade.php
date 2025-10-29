@@ -7,10 +7,23 @@
 
     <section class="py-12 mx-12 space-y-4">
 
-        <header>
+        <header class="flex justify-between">
             <h3 class="text-2xl font-bold text-zinc-700">
                 {{__('Categories')}}
             </h3>
+
+            <div>
+            <x-primary-link-button
+                href="{{ route('admin.categories.create') }}">
+                <i class="fa-solid fa-plus"></i>
+                New Category
+            </x-primary-link-button>
+
+                <div class="text-sm capitalize">
+                    Add Search Form Here
+                </div>
+
+                </div>
         </header>
 
         <table class="table w-full bg-white border">
@@ -21,6 +34,7 @@
                 <th class="p-2">Actions</th>
             </tr>
             </thead>
+
             <tbody>
             @forelse($categories as $category)
                 <tr class="odd:bg-gray-100">
@@ -49,7 +63,6 @@
                             <i class="fa-solid fa-times pr-2"></i>
                             <span class="sr-only">Delete</span>
                         </x-secondary-link-button>
-
                     </td>
 
                 </tr>
@@ -59,6 +72,7 @@
                 </tr>
             @endforelse
             </tbody>
+
             <tfoot>
             <tr>
                 <td class="p-4" colspan="3">

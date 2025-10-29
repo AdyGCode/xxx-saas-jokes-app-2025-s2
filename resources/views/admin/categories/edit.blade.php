@@ -7,10 +7,17 @@
 
     <section class="py-12 mx-12 space-y-4">
 
-        <header>
+        <header class="flex justify-between">
             <h3 class="text-2xl font-bold text-zinc-700">
-                {{__('Categories')}}: {{ __('Edit') }}
+                {{__('Categories')}}: <i class="fa-solid fa-edit"></i> {{ __('Edit') }}
             </h3>
+
+            <x-primary-link-button
+                href="{{ route('admin.categories.create') }}">
+                <i class="fa-solid fa-plus"></i>
+                New Category
+            </x-primary-link-button>
+
         </header>
 
         <form action="{{ route('admin.categories.update', $category) }}"
