@@ -37,7 +37,7 @@ class Category extends Model
     {
         return [
             'title' => AsStringable::class,
-            'description' => AsStringable::class
+            'description' => AsStringable::class,
         ];
     }
 
